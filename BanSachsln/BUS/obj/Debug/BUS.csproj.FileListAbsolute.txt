@@ -1,0 +1,12 @@
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\BUS.dll.config
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\BUS.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\BUS.pdb
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\DAO.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\DTO.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\EntityFramework.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\DAO.pdb
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\DTO.pdb
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\bin\Debug\EntityFramework.xml
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\obj\Debug\BUS.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\BUS\obj\Debug\BUS.pdb

@@ -1,0 +1,7 @@
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\bin\Debug\DAO.dll.config
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\bin\Debug\DAO.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\bin\Debug\DAO.pdb
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\bin\Debug\EntityFramework.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\bin\Debug\EntityFramework.xml
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\obj\Debug\DAO.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\obj\Debug\DAO.pdb

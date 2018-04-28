@@ -1,0 +1,9 @@
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\bin\Debug\DTO.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\bin\Debug\DTO.pdb
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\obj\Debug\DTO.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\obj\Debug\DTO.pdb
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\bin\Debug\DAO.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\bin\Debug\EntityFramework.dll
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\bin\Debug\DAO.pdb
+E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DTO\bin\Debug\EntityFramework.xml

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5CE8D759-8A39-4A6C-A1C9-F6316CA5B601}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAO</RootNamespace>
+    <AssemblyName>DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BanSach.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanSach.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BanSach.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BanSach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanSach.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETCONGNO.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETDIEMDANH.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETHOADON.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETKHUYENMAI.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETPHIEUNHAP.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETTONKHO.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONGNO.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DIEMDANH.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOADON.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHACHHANG.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHUYENMAI.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOAIKHACHHANG.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOAINHANVIEN.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHANVIEN.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHAXUATBAN.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHIEUNHAP.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SACH.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THELOAI.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TONKHO.cs">
+      <DependentUpon>BanSach.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BanSach.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BanSach.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="BanSach.edmx.diagram">
+      <DependentUpon>BanSach.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BanSach.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BanSach.edmx</DependentUpon>
+      <LastGenOutput>BanSach.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BanSach.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BanSach.edmx</DependentUpon>
+      <LastGenOutput>BanSach.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
