@@ -46,16 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KhachHangBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
+    <Compile Include="NhapSachBUS.cs" />
     <Compile Include="NhaXuatBanBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SachBUS.cs" />
+    <Compile Include="Services\IKhachHangService.cs" />
     <Compile Include="Services\INhanVienService.cs" />
+    <Compile Include="Services\INhapSachService.cs" />
     <Compile Include="Services\INhaXuatBanService.cs" />
     <Compile Include="Services\ISachService.cs" />
     <Compile Include="Services\ITaiKhoanService.cs" />
     <Compile Include="Services\ITheLoaiService.cs" />
+    <Compile Include="Services\KhachHangService.cs" />
     <Compile Include="Services\NhanVienService.cs" />
+    <Compile Include="Services\NhapSachService.cs" />
     <Compile Include="Services\NhaXuatBanService.cs" />
     <Compile Include="Services\SachService.cs" />
     <Compile Include="Services\TaiKhoanService.cs" />

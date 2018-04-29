@@ -23,8 +23,10 @@ namespace DAO
         public Nullable<System.DateTime> NgayLap { get; set; }
         public Nullable<int> MaNV { get; set; }
         public Nullable<double> TongTien { get; set; }
+        public Nullable<int> MaNXB { get; set; }
     
         public virtual ICollection<CHITIETPHIEUNHAP> CHITIETPHIEUNHAPs { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual NHAXUATBAN NHAXUATBAN { get; set; }
     }
 }

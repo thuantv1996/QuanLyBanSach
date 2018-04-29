@@ -145,6 +145,7 @@
     <Property Name="NgayLap" Type="date" />
     <Property Name="MaNV" Type="int" />
     <Property Name="TongTien" Type="float" />
+    <Property Name="MaNXB" Type="int" />
   </EntityType>
   <EntityType Name="SACH">
     <Key>
@@ -159,6 +160,7 @@
     <Property Name="GiaBanSi" Type="float" />
     <Property Name="GiaBanLe" Type="float" />
     <Property Name="TacGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="GiaNhap" Type="float" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -398,6 +400,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PHIEUNHAP_NHAXUATBAN">
+    <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
+    <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAXUATBAN">
+        <PropertyRef Name="MaNXB" />
+      </Principal>
+      <Dependent Role="PHIEUNHAP">
+        <PropertyRef Name="MaNXB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_SACH_NHAXUATBAN">
     <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
     <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
@@ -522,6 +536,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_PHIEUNHAP_NHANVIEN" Association="Self.FK_PHIEUNHAP_NHANVIEN">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIEUNHAP_NHAXUATBAN" Association="Self.FK_PHIEUNHAP_NHAXUATBAN">
+      <End Role="NHAXUATBAN" EntitySet="NHAXUATBAN" />
       <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
     </AssociationSet>
     <AssociationSet Name="FK_SACH_NHAXUATBAN" Association="Self.FK_SACH_NHAXUATBAN">

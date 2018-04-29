@@ -30,6 +30,7 @@ namespace DAO
         public Nullable<double> GiaBanSi { get; set; }
         public Nullable<double> GiaBanLe { get; set; }
         public string TacGia { get; set; }
+        public Nullable<double> GiaNhap { get; set; }
     
         public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
         public virtual ICollection<CHITIETPHIEUNHAP> CHITIETPHIEUNHAPs { get; set; }

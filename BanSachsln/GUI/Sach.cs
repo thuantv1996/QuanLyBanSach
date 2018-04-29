@@ -35,9 +35,10 @@ namespace GUI
             txtGiaSi.Text = "";
             txtMaSach.Text = "";
             txtMoTa.Text = "";
-            txtSoLuong.Text = "0";
+            txtGiaNhap.Text = "0";
             txtTacGia.Text = "";
             txtTenSach.Text = "";
+            txtGiaNhap.Text = "";
             try
             {
                 cmbNhaXuatBan.SelectedIndex = 0;
@@ -46,7 +47,7 @@ namespace GUI
             catch { }
             //
             txtMaSach.Enabled = true;
-            txtSoLuong.Enabled = false;
+            txtGiaNhap.Enabled = false;
             btnDelete.Enabled = false;
         }
         // load data
@@ -110,6 +111,21 @@ namespace GUI
                 txtGiaSi.Focus();
                 return false;
             }
+            try
+            {
+                if(Double.Parse(txtGiaNhap.Text)<0)
+                {
+                    MessageBox.Show("Giá bán nhập lớn hơn 0!");
+                    txtGiaNhap.Focus();
+                    return false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Giá bán nhập là số!");
+                txtGiaNhap.Focus();
+                return false;
+            }
             if (String.IsNullOrEmpty(txtTacGia.Text))
             {
                 MessageBox.Show("Tác giả sách khác rỗng!");
@@ -132,10 +148,11 @@ namespace GUI
                 MaNXB = Int32.Parse(cmbNhaXuatBan.SelectedValue.ToString()),
                 MaTheLoai = Int32.Parse(cmbTheLoai.SelectedValue.ToString()),
                 MoTa = txtMoTa.Text,
-                GiaBanLe = Int32.Parse(txtGiaLe.Text),
-                GiaBanSi = Int32.Parse(txtGiaSi.Text),
+                GiaBanLe = Double.Parse(txtGiaLe.Text),
+                GiaBanSi = Double.Parse(txtGiaSi.Text),
                 TacGia = txtTacGia.Text,
-                SoLuong = Int32.Parse(txtSoLuong.Text)
+                SoLuong = Int32.Parse(txtGiaNhap.Text),
+                 GiaNhap = Double.Parse(txtGiaNhap.Text)
             };
             SachBUS.ThemSach(sach);
             MessageBox.Show(SachBUS.Message);
@@ -164,7 +181,7 @@ namespace GUI
                 GiaBanLe = Int32.Parse(txtGiaLe.Text),
                 GiaBanSi = Int32.Parse(txtGiaSi.Text),
                 TacGia = txtTacGia.Text,
-                SoLuong = Int32.Parse(txtSoLuong.Text)
+                SoLuong = Int32.Parse(txtGiaNhap.Text)
             };
             SachBUS.SuaSach(sach);
             MessageBox.Show(SachBUS.Message);
@@ -240,7 +257,7 @@ namespace GUI
                 txtMaSach.Text = sach.MaSach;
                 txtTenSach.Text = sach.TenSach;
                 txtMoTa.Text = sach.MoTa;
-                txtSoLuong.Text = sach.SoLuong.ToString();
+                txtGiaNhap.Text = sach.SoLuong.ToString();
                 txtGiaLe.Text = sach.GiaBanLe.ToString();
                 txtGiaSi.Text = sach.GiaBanSi.ToString();
                 txtTacGia.Text = sach.TacGia;
@@ -251,5 +268,7 @@ namespace GUI
             }
             catch { }
         }
+
+
     }
 }

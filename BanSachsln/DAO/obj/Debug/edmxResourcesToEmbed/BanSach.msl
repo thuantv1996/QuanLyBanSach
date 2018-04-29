@@ -150,6 +150,7 @@
     <EntitySetMapping Name="PHIEUNHAPs">
       <EntityTypeMapping TypeName="QuanLyBanSachModel.PHIEUNHAP">
         <MappingFragment StoreEntitySet="PHIEUNHAP">
+          <ScalarProperty Name="MaNXB" ColumnName="MaNXB" />
           <ScalarProperty Name="MaPhieuNhap" ColumnName="MaPhieuNhap" />
           <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
@@ -160,6 +161,7 @@
     <EntitySetMapping Name="SACHes">
       <EntityTypeMapping TypeName="QuanLyBanSachModel.SACH">
         <MappingFragment StoreEntitySet="SACH">
+          <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
           <ScalarProperty Name="MaSach" ColumnName="MaSach" />
           <ScalarProperty Name="TenSach" ColumnName="TenSach" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />

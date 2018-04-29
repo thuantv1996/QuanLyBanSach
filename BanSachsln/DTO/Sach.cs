@@ -19,5 +19,6 @@ namespace DTO
         public double GiaBanLe { get; set; }
         public int SoLuong { get; set; }
         public string TacGia { get; set; }
+        public double GiaNhap { get; set; }
     }
 }

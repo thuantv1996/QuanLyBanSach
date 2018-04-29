@@ -17,6 +17,7 @@ namespace DAO
         public NHAXUATBAN()
         {
             this.SACHes = new HashSet<SACH>();
+            this.PHIEUNHAPs = new HashSet<PHIEUNHAP>();
         }
     
         public int MaNXB { get; set; }
@@ -25,5 +26,6 @@ namespace DAO
         public string SoDienThoaiNXB { get; set; }
     
         public virtual ICollection<SACH> SACHes { get; set; }
+        public virtual ICollection<PHIEUNHAP> PHIEUNHAPs { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyBanSachModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyBanSachModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CHITIETCONGNO">
           <Key>
             <PropertyRef Name="MaCongNo" />
@@ -150,6 +150,7 @@
           <Property Name="NgayLap" Type="date" />
           <Property Name="MaNV" Type="int" />
           <Property Name="TongTien" Type="float" />
+          <Property Name="MaNXB" Type="int" />
         </EntityType>
         <EntityType Name="SACH">
           <Key>
@@ -164,6 +165,7 @@
           <Property Name="GiaBanSi" Type="float" />
           <Property Name="GiaBanLe" Type="float" />
           <Property Name="TacGia" Type="nvarchar" MaxLength="50" />
+          <Property Name="GiaNhap" Type="float" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -403,6 +405,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PHIEUNHAP_NHAXUATBAN">
+          <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
+          <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAXUATBAN">
+              <PropertyRef Name="MaNXB" />
+            </Principal>
+            <Dependent Role="PHIEUNHAP">
+              <PropertyRef Name="MaNXB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SACH_NHAXUATBAN">
           <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
           <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
@@ -529,6 +543,10 @@
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
           </AssociationSet>
+          <AssociationSet Name="FK_PHIEUNHAP_NHAXUATBAN" Association="Self.FK_PHIEUNHAP_NHAXUATBAN">
+            <End Role="NHAXUATBAN" EntitySet="NHAXUATBAN" />
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
+          </AssociationSet>
           <AssociationSet Name="FK_SACH_NHAXUATBAN" Association="Self.FK_SACH_NHAXUATBAN">
             <End Role="NHAXUATBAN" EntitySet="NHAXUATBAN" />
             <End Role="SACH" EntitySet="SACH" />
@@ -542,8 +560,7 @@
             <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyBanSachModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -711,6 +728,7 @@
           <Property Name="DiaChiNXB" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="SoDienThoaiNXB" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="SACHes" Relationship="Self.FK_SACH_NHAXUATBAN" FromRole="NHAXUATBAN" ToRole="SACH" />
+          <NavigationProperty Name="PHIEUNHAPs" Relationship="QuanLyBanSachModel.FK_PHIEUNHAP_NHAXUATBAN" FromRole="NHAXUATBAN" ToRole="PHIEUNHAP" />
         </EntityType>
         <EntityType Name="PHIEUNHAP">
           <Key>
@@ -722,6 +740,8 @@
           <Property Name="TongTien" Type="Double" />
           <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.FK_CHITIETPHIEUNHAP_PHIEUNHAP" FromRole="PHIEUNHAP" ToRole="CHITIETPHIEUNHAP" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_PHIEUNHAP_NHANVIEN" FromRole="PHIEUNHAP" ToRole="NHANVIEN" />
+          <Property Name="MaNXB" Type="Int32" />
+          <NavigationProperty Name="NHAXUATBAN" Relationship="QuanLyBanSachModel.FK_PHIEUNHAP_NHAXUATBAN" FromRole="PHIEUNHAP" ToRole="NHAXUATBAN" />
         </EntityType>
         <EntityType Name="SACH">
           <Key>
@@ -741,6 +761,7 @@
           <NavigationProperty Name="CHITIETTONKHOes" Relationship="Self.FK_CHITIETTONKHO_SACH" FromRole="SACH" ToRole="CHITIETTONKHO" />
           <NavigationProperty Name="NHAXUATBAN" Relationship="Self.FK_SACH_NHAXUATBAN" FromRole="SACH" ToRole="NHAXUATBAN" />
           <NavigationProperty Name="THELOAI" Relationship="Self.FK_SACH_THELOAI" FromRole="SACH" ToRole="THELOAI" />
+          <Property Name="GiaNhap" Type="Double" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1123,7 +1144,23 @@
             <End Role="THELOAI" EntitySet="THELOAIs" />
             <End Role="SACH" EntitySet="SACHes" />
           </AssociationSet>
+          <AssociationSet Name="FK_PHIEUNHAP_NHAXUATBAN" Association="QuanLyBanSachModel.FK_PHIEUNHAP_NHAXUATBAN">
+            <End Role="NHAXUATBAN" EntitySet="NHAXUATBANs" />
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_PHIEUNHAP_NHAXUATBAN">
+          <End Type="QuanLyBanSachModel.NHAXUATBAN" Role="NHAXUATBAN" Multiplicity="0..1" />
+          <End Type="QuanLyBanSachModel.PHIEUNHAP" Role="PHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAXUATBAN">
+              <PropertyRef Name="MaNXB" />
+            </Principal>
+            <Dependent Role="PHIEUNHAP">
+              <PropertyRef Name="MaNXB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1279,6 +1316,7 @@
           <EntitySetMapping Name="PHIEUNHAPs">
             <EntityTypeMapping TypeName="QuanLyBanSachModel.PHIEUNHAP">
               <MappingFragment StoreEntitySet="PHIEUNHAP">
+                <ScalarProperty Name="MaNXB" ColumnName="MaNXB" />
                 <ScalarProperty Name="MaPhieuNhap" ColumnName="MaPhieuNhap" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
@@ -1289,6 +1327,7 @@
           <EntitySetMapping Name="SACHes">
             <EntityTypeMapping TypeName="QuanLyBanSachModel.SACH">
               <MappingFragment StoreEntitySet="SACH">
+                <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
                 <ScalarProperty Name="MaSach" ColumnName="MaSach" />
                 <ScalarProperty Name="TenSach" ColumnName="TenSach" />
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />

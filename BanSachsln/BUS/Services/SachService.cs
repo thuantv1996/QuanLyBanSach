@@ -35,7 +35,8 @@ namespace BUS.Services
                                         SoLuong = s.SoLuong.Value,
                                         TacGia = s.TacGia,
                                         TenNXB = nxb.TenNXB,
-                                        TenTheLoai = tl.TenTheLoai
+                                        TenTheLoai = tl.TenTheLoai,
+                                        GiaNhap = s.GiaNhap.Value
                                     };
             return res;
         }

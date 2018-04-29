@@ -26,7 +26,8 @@ namespace BUS
                 TacGia = sach.TacGia,
                 MaNXB = sach.MaNXB,
                 MaTheLoai = sach.MaTheLoai,
-                SoLuong = sach.SoLuong  
+                SoLuong = sach.SoLuong ,
+                GiaNhap = sach.GiaNhap
             };
         }
 
@@ -129,6 +130,7 @@ namespace BUS
                 des.TacGia = sach.TacGia;
                 des.GiaBanLe = sach.GiaBanLe;
                 des.GiaBanSi = sach.GiaBanSi;
+                des.GiaNhap = sach.GiaNhap;
                 db.SaveChanges();
             }
             catch (Exception e)

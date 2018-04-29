@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\BanSachsln\DAO\BanSach.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\User\HocTap\HK2-2017-2018\PhanTichThietKe\Code\git\QuanLyBanSach\BanSachsln\DAO\BanSach.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

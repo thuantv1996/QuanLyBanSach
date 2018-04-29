@@ -46,6 +46,7 @@
         <AssociationConnector Association="QuanLyBanSachModel.FK_TAIKHOAN_NHANVIEN" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanSachModel.FK_SACH_NHAXUATBAN" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanSachModel.FK_SACH_THELOAI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanSachModel.FK_PHIEUNHAP_NHAXUATBAN" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
