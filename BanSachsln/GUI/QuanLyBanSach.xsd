@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QuanLyBanSach" targetNamespace="http://tempuri.org/QuanLyBanSach.xsd" xmlns:mstns="http://tempuri.org/QuanLyBanSach.xsd" xmlns="http://tempuri.org/QuanLyBanSach.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyBanSachConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyBanSachConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GUI.Properties.Settings.GlobalReference.Default.QuanLyBanSachConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BaoCaoCongNoTableAdapter" GeneratorDataComponentClassName="BaoCaoCongNoTableAdapter" Name="BaoCaoCongNo" UserDataComponentName="BaoCaoCongNoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QuanLyBanSachConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select * from CONGNO,CHITIETCONGNO,KHACHHANG
+where CONGNO.MaCongNo = CHITIETCONGNO.MaCongNo and KHACHHANG.MaKH = CHITIETCONGNO.MaKH</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaCongNo" DataSetColumn="MaCongNo" />
+              <Mapping SourceColumn="NgayBatDau" DataSetColumn="NgayBatDau" />
+              <Mapping SourceColumn="NgayKetThuc" DataSetColumn="NgayKetThuc" />
+              <Mapping SourceColumn="MaCongNo1" DataSetColumn="MaCongNo1" />
+              <Mapping SourceColumn="MaKH" DataSetColumn="MaKH" />
+              <Mapping SourceColumn="NoDau" DataSetColumn="NoDau" />
+              <Mapping SourceColumn="NoCuoi" DataSetColumn="NoCuoi" />
+              <Mapping SourceColumn="MaKH1" DataSetColumn="MaKH1" />
+              <Mapping SourceColumn="TenKH" DataSetColumn="TenKH" />
+              <Mapping SourceColumn="DiaChi" DataSetColumn="DiaChi" />
+              <Mapping SourceColumn="SoDienThoaiKH" DataSetColumn="SoDienThoaiKH" />
+              <Mapping SourceColumn="TienNo" DataSetColumn="TienNo" />
+              <Mapping SourceColumn="MaLoaiKH" DataSetColumn="MaLoaiKH" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BaoCaoTonKhoTableAdapter" GeneratorDataComponentClassName="BaoCaoTonKhoTableAdapter" Name="BaoCaoTonKho" UserDataComponentName="BaoCaoTonKhoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QuanLyBanSachConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SACH.MaSach, SACH.TenSach, SACH.MoTa, SACH.MaNXB, SACH.MaTheLoai, SACH.SoLuong, SACH.GiaBanSi, SACH.GiaBanLe, SACH.TacGia, SACH.GiaNhap, 
+                         CHITIETTONKHO.MaTonKho, CHITIETTONKHO.MaSach AS Expr1, CHITIETTONKHO.TonDau, CHITIETTONKHO.TonCuoi, TONKHO.MaTonKho AS Expr2, 
+                         TONKHO.NgayBatDau, TONKHO.NgayKetThuc
+FROM            SACH INNER JOIN
+                         CHITIETTONKHO ON SACH.MaSach = CHITIETTONKHO.MaSach INNER JOIN
+                         TONKHO ON CHITIETTONKHO.MaTonKho = TONKHO.MaTonKho</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaSach" DataSetColumn="MaSach" />
+              <Mapping SourceColumn="TenSach" DataSetColumn="TenSach" />
+              <Mapping SourceColumn="MoTa" DataSetColumn="MoTa" />
+              <Mapping SourceColumn="MaNXB" DataSetColumn="MaNXB" />
+              <Mapping SourceColumn="MaTheLoai" DataSetColumn="MaTheLoai" />
+              <Mapping SourceColumn="SoLuong" DataSetColumn="SoLuong" />
+              <Mapping SourceColumn="GiaBanSi" DataSetColumn="GiaBanSi" />
+              <Mapping SourceColumn="GiaBanLe" DataSetColumn="GiaBanLe" />
+              <Mapping SourceColumn="TacGia" DataSetColumn="TacGia" />
+              <Mapping SourceColumn="GiaNhap" DataSetColumn="GiaNhap" />
+              <Mapping SourceColumn="MaTonKho" DataSetColumn="MaTonKho" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="TonDau" DataSetColumn="TonDau" />
+              <Mapping SourceColumn="TonCuoi" DataSetColumn="TonCuoi" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="NgayBatDau" DataSetColumn="NgayBatDau" />
+              <Mapping SourceColumn="NgayKetThuc" DataSetColumn="NgayKetThuc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QuanLyBanSach" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QuanLyBanSach" msprop:Generator_UserDSName="QuanLyBanSach">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BaoCaoCongNo" msprop:Generator_TableClassName="BaoCaoCongNoDataTable" msprop:Generator_TableVarName="tableBaoCaoCongNo" msprop:Generator_TablePropName="BaoCaoCongNo" msprop:Generator_RowDeletingName="BaoCaoCongNoRowDeleting" msprop:Generator_RowChangingName="BaoCaoCongNoRowChanging" msprop:Generator_RowEvHandlerName="BaoCaoCongNoRowChangeEventHandler" msprop:Generator_RowDeletedName="BaoCaoCongNoRowDeleted" msprop:Generator_UserTableName="BaoCaoCongNo" msprop:Generator_RowChangedName="BaoCaoCongNoRowChanged" msprop:Generator_RowEvArgName="BaoCaoCongNoRowChangeEvent" msprop:Generator_RowClassName="BaoCaoCongNoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaCongNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMaCongNo" msprop:Generator_ColumnPropNameInRow="MaCongNo" msprop:Generator_ColumnPropNameInTable="MaCongNoColumn" msprop:Generator_UserColumnName="MaCongNo" type="xs:int" />
+              <xs:element name="NgayBatDau" msprop:Generator_ColumnVarNameInTable="columnNgayBatDau" msprop:Generator_ColumnPropNameInRow="NgayBatDau" msprop:Generator_ColumnPropNameInTable="NgayBatDauColumn" msprop:Generator_UserColumnName="NgayBatDau" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NgayKetThuc" msprop:Generator_ColumnVarNameInTable="columnNgayKetThuc" msprop:Generator_ColumnPropNameInRow="NgayKetThuc" msprop:Generator_ColumnPropNameInTable="NgayKetThucColumn" msprop:Generator_UserColumnName="NgayKetThuc" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MaCongNo1" msprop:Generator_ColumnVarNameInTable="columnMaCongNo1" msprop:Generator_ColumnPropNameInRow="MaCongNo1" msprop:Generator_ColumnPropNameInTable="MaCongNo1Column" msprop:Generator_UserColumnName="MaCongNo1" type="xs:int" />
+              <xs:element name="MaKH" msprop:Generator_ColumnVarNameInTable="columnMaKH" msprop:Generator_ColumnPropNameInRow="MaKH" msprop:Generator_ColumnPropNameInTable="MaKHColumn" msprop:Generator_UserColumnName="MaKH" type="xs:int" />
+              <xs:element name="NoDau" msprop:Generator_ColumnVarNameInTable="columnNoDau" msprop:Generator_ColumnPropNameInRow="NoDau" msprop:Generator_ColumnPropNameInTable="NoDauColumn" msprop:Generator_UserColumnName="NoDau" type="xs:double" minOccurs="0" />
+              <xs:element name="NoCuoi" msprop:Generator_ColumnVarNameInTable="columnNoCuoi" msprop:Generator_ColumnPropNameInRow="NoCuoi" msprop:Generator_ColumnPropNameInTable="NoCuoiColumn" msprop:Generator_UserColumnName="NoCuoi" type="xs:double" minOccurs="0" />
+              <xs:element name="MaKH1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMaKH1" msprop:Generator_ColumnPropNameInRow="MaKH1" msprop:Generator_ColumnPropNameInTable="MaKH1Column" msprop:Generator_UserColumnName="MaKH1" type="xs:int" />
+              <xs:element name="TenKH" msprop:Generator_ColumnVarNameInTable="columnTenKH" msprop:Generator_ColumnPropNameInRow="TenKH" msprop:Generator_ColumnPropNameInTable="TenKHColumn" msprop:Generator_UserColumnName="TenKH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DiaChi" msprop:Generator_ColumnVarNameInTable="columnDiaChi" msprop:Generator_ColumnPropNameInRow="DiaChi" msprop:Generator_ColumnPropNameInTable="DiaChiColumn" msprop:Generator_UserColumnName="DiaChi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SoDienThoaiKH" msprop:Generator_ColumnVarNameInTable="columnSoDienThoaiKH" msprop:Generator_ColumnPropNameInRow="SoDienThoaiKH" msprop:Generator_ColumnPropNameInTable="SoDienThoaiKHColumn" msprop:Generator_UserColumnName="SoDienThoaiKH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TienNo" msprop:Generator_ColumnVarNameInTable="columnTienNo" msprop:Generator_ColumnPropNameInRow="TienNo" msprop:Generator_ColumnPropNameInTable="TienNoColumn" msprop:Generator_UserColumnName="TienNo" type="xs:double" minOccurs="0" />
+              <xs:element name="MaLoaiKH" msprop:Generator_ColumnVarNameInTable="columnMaLoaiKH" msprop:Generator_ColumnPropNameInRow="MaLoaiKH" msprop:Generator_ColumnPropNameInTable="MaLoaiKHColumn" msprop:Generator_UserColumnName="MaLoaiKH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BaoCaoTonKho" msprop:Generator_TableClassName="BaoCaoTonKhoDataTable" msprop:Generator_TableVarName="tableBaoCaoTonKho" msprop:Generator_TablePropName="BaoCaoTonKho" msprop:Generator_RowDeletingName="BaoCaoTonKhoRowDeleting" msprop:Generator_RowChangingName="BaoCaoTonKhoRowChanging" msprop:Generator_RowEvHandlerName="BaoCaoTonKhoRowChangeEventHandler" msprop:Generator_RowDeletedName="BaoCaoTonKhoRowDeleted" msprop:Generator_UserTableName="BaoCaoTonKho" msprop:Generator_RowChangedName="BaoCaoTonKhoRowChanged" msprop:Generator_RowEvArgName="BaoCaoTonKhoRowChangeEvent" msprop:Generator_RowClassName="BaoCaoTonKhoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaSach" msprop:Generator_ColumnVarNameInTable="columnMaSach" msprop:Generator_ColumnPropNameInRow="MaSach" msprop:Generator_ColumnPropNameInTable="MaSachColumn" msprop:Generator_UserColumnName="MaSach">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenSach" msprop:Generator_ColumnVarNameInTable="columnTenSach" msprop:Generator_ColumnPropNameInRow="TenSach" msprop:Generator_ColumnPropNameInTable="TenSachColumn" msprop:Generator_UserColumnName="TenSach" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MoTa" msprop:Generator_ColumnVarNameInTable="columnMoTa" msprop:Generator_ColumnPropNameInRow="MoTa" msprop:Generator_ColumnPropNameInTable="MoTaColumn" msprop:Generator_UserColumnName="MoTa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaNXB" msprop:Generator_ColumnVarNameInTable="columnMaNXB" msprop:Generator_ColumnPropNameInRow="MaNXB" msprop:Generator_ColumnPropNameInTable="MaNXBColumn" msprop:Generator_UserColumnName="MaNXB" type="xs:int" minOccurs="0" />
+              <xs:element name="MaTheLoai" msprop:Generator_ColumnVarNameInTable="columnMaTheLoai" msprop:Generator_ColumnPropNameInRow="MaTheLoai" msprop:Generator_ColumnPropNameInTable="MaTheLoaiColumn" msprop:Generator_UserColumnName="MaTheLoai" type="xs:int" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+              <xs:element name="GiaBanSi" msprop:Generator_ColumnVarNameInTable="columnGiaBanSi" msprop:Generator_ColumnPropNameInRow="GiaBanSi" msprop:Generator_ColumnPropNameInTable="GiaBanSiColumn" msprop:Generator_UserColumnName="GiaBanSi" type="xs:double" minOccurs="0" />
+              <xs:element name="GiaBanLe" msprop:Generator_ColumnVarNameInTable="columnGiaBanLe" msprop:Generator_ColumnPropNameInRow="GiaBanLe" msprop:Generator_ColumnPropNameInTable="GiaBanLeColumn" msprop:Generator_UserColumnName="GiaBanLe" type="xs:double" minOccurs="0" />
+              <xs:element name="TacGia" msprop:Generator_ColumnVarNameInTable="columnTacGia" msprop:Generator_ColumnPropNameInRow="TacGia" msprop:Generator_ColumnPropNameInTable="TacGiaColumn" msprop:Generator_UserColumnName="TacGia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GiaNhap" msprop:Generator_ColumnVarNameInTable="columnGiaNhap" msprop:Generator_ColumnPropNameInRow="GiaNhap" msprop:Generator_ColumnPropNameInTable="GiaNhapColumn" msprop:Generator_UserColumnName="GiaNhap" type="xs:double" minOccurs="0" />
+              <xs:element name="MaTonKho" msprop:Generator_ColumnVarNameInTable="columnMaTonKho" msprop:Generator_ColumnPropNameInRow="MaTonKho" msprop:Generator_ColumnPropNameInTable="MaTonKhoColumn" msprop:Generator_UserColumnName="MaTonKho" type="xs:int" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TonDau" msprop:Generator_ColumnVarNameInTable="columnTonDau" msprop:Generator_ColumnPropNameInRow="TonDau" msprop:Generator_ColumnPropNameInTable="TonDauColumn" msprop:Generator_UserColumnName="TonDau" type="xs:int" minOccurs="0" />
+              <xs:element name="TonCuoi" msprop:Generator_ColumnVarNameInTable="columnTonCuoi" msprop:Generator_ColumnPropNameInRow="TonCuoi" msprop:Generator_ColumnPropNameInTable="TonCuoiColumn" msprop:Generator_UserColumnName="TonCuoi" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr2" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:int" />
+              <xs:element name="NgayBatDau" msprop:Generator_ColumnVarNameInTable="columnNgayBatDau" msprop:Generator_ColumnPropNameInRow="NgayBatDau" msprop:Generator_ColumnPropNameInTable="NgayBatDauColumn" msprop:Generator_UserColumnName="NgayBatDau" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NgayKetThuc" msprop:Generator_ColumnVarNameInTable="columnNgayKetThuc" msprop:Generator_ColumnPropNameInRow="NgayKetThuc" msprop:Generator_ColumnPropNameInTable="NgayKetThucColumn" msprop:Generator_UserColumnName="NgayKetThuc" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BaoCaoCongNo" />
+      <xs:field xpath="mstns:MaCongNo" />
+      <xs:field xpath="mstns:MaCongNo1" />
+      <xs:field xpath="mstns:MaKH" />
+      <xs:field xpath="mstns:MaKH1" />
+    </xs:unique>
+    <xs:unique name="BaoCaoTonKho_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BaoCaoTonKho" />
+      <xs:field xpath="mstns:MaSach" />
+      <xs:field xpath="mstns:MaTonKho" />
+      <xs:field xpath="mstns:Expr1" />
+      <xs:field xpath="mstns:Expr2" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -45,7 +45,14 @@ namespace GUI
                 return;
             }
             MessageBox.Show("Đăng nhập thành công!");
+            // Lưu vết
+            DTO.Common.isDangNhap = true;
             // gọi màn hình hệ thống
+            Main fMain = new Main();        
+            fMain.Show();
+            fMain.Left = 0;
+            fMain.Top = 0;
+            this.Hide();
 
         }
         // change password

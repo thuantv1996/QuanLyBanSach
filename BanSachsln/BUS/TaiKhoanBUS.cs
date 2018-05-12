@@ -121,7 +121,7 @@ namespace BUS
             // chuyển tên đăng nhập về chuỗi thường
             obj.TenDangNhap = obj.TenDangNhap.ToLower();
             // Mã hóa mật khẩu
-            obj.MatKhau = "123456";
+            obj.MatKhau = Regulations.MatKhau;
             obj.MatKhau = GetMD5(obj.MatKhau);
             /// Bước 2 Thêm tài khoản
             try
@@ -240,6 +240,26 @@ namespace BUS
             {
                 Common.ct_DiemDanh = ctdd;
                 Common.diemDanh = dd;
+            }
+            // Lấy thông tin nhân viên
+            NHANVIEN nv = (from n in db.NHANVIENs
+                           join tk in db.TAIKHOANs on n.MaNV equals tk.MaNV
+                           where tk.MaTaiKhoan == Common.taikhoan.MaTaiKhoan
+                           select n).SingleOrDefault();
+            if(nv.MaLoaiNV.Value==1)
+            {
+                Common.QuyenTryCap = QUYEN.QL;
+            }
+            else
+            {
+                if(nv.MaLoaiNV.Value == 2)
+                {
+                    Common.QuyenTryCap = QUYEN.NV_BH;
+                }
+                else
+                {
+                    Common.QuyenTryCap = QUYEN.NV_K;
+                }
             }
         }
     }

@@ -18,6 +18,7 @@ namespace DAO
         {
             this.CHITIETCONGNOes = new HashSet<CHITIETCONGNO>();
             this.HOADONs = new HashSet<HOADON>();
+            this.THANHTOANs = new HashSet<THANHTOAN>();
         }
     
         public int MaKH { get; set; }
@@ -30,5 +31,6 @@ namespace DAO
         public virtual ICollection<CHITIETCONGNO> CHITIETCONGNOes { get; set; }
         public virtual ICollection<HOADON> HOADONs { get; set; }
         public virtual LOAIKHACHHANG LOAIKHACHHANG { get; set; }
+        public virtual ICollection<THANHTOAN> THANHTOANs { get; set; }
     }
 }

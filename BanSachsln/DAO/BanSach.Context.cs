@@ -46,5 +46,7 @@ namespace DAO
         public DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public DbSet<THELOAI> THELOAIs { get; set; }
         public DbSet<TONKHO> TONKHOes { get; set; }
+        public DbSet<THANHTOAN> THANHTOANs { get; set; }
+        public DbSet<QUYDINH> QUYDINHs { get; set; }
     }
 }

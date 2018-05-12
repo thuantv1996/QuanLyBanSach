@@ -25,7 +25,7 @@
       <PropertyRef Name="MaHoaDon" />
       <PropertyRef Name="MaSach" />
     </Key>
-    <Property Name="MaHoaDon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaHoaDon" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="MaSach" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
   </EntityType>
@@ -76,7 +76,7 @@
     <Key>
       <PropertyRef Name="MaHoaDon" />
     </Key>
-    <Property Name="MaHoaDon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaHoaDon" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="MaKH" Type="int" />
     <Property Name="MaNV" Type="int" />
     <Property Name="NgayHoaDon" Type="date" />
@@ -86,7 +86,7 @@
     <Key>
       <PropertyRef Name="MaKH" />
     </Key>
-    <Property Name="MaKH" Type="int" Nullable="false" />
+    <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
     <Property Name="SoDienThoaiKH" Type="varchar" MaxLength="15" />
@@ -147,6 +147,14 @@
     <Property Name="TongTien" Type="float" />
     <Property Name="MaNXB" Type="int" />
   </EntityType>
+  <EntityType Name="QUYDINH">
+    <Key>
+      <PropertyRef Name="MaQuyDinh" />
+    </Key>
+    <Property Name="MaQuyDinh" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenQuyDinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="NoiDung" Type="float" />
+  </EntityType>
   <EntityType Name="SACH">
     <Key>
       <PropertyRef Name="MaSach" />
@@ -180,6 +188,15 @@
     <Property Name="TenDangNhap" Type="varchar" MaxLength="20" />
     <Property Name="MatKhau" Type="char" MaxLength="32" />
     <Property Name="MaNV" Type="int" />
+  </EntityType>
+  <EntityType Name="THANHTOAN">
+    <Key>
+      <PropertyRef Name="MaThanhToan" />
+    </Key>
+    <Property Name="MaThanhToan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayThanhToan" Type="date" />
+    <Property Name="SoTien" Type="float" />
+    <Property Name="MaKhachHang" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="THELOAI">
     <Key>
@@ -448,6 +465,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_THANHTOAN_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="QuanLyBanSachModelStoreContainer">
     <EntitySet Name="CHITIETCONGNO" EntityType="Self.CHITIETCONGNO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHITIETDIEMDANH" EntityType="Self.CHITIETDIEMDANH" Schema="dbo" store:Type="Tables" />
@@ -465,9 +494,11 @@
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHAXUATBAN" EntityType="Self.NHAXUATBAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHIEUNHAP" EntityType="Self.PHIEUNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUYDINH" EntityType="Self.QUYDINH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TONKHO" EntityType="Self.TONKHO" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CHITIETCONGNO_CONGNO" Association="Self.FK_CHITIETCONGNO_CONGNO">
@@ -553,6 +584,10 @@
     <AssociationSet Name="FK_TAIKHOAN_NHANVIEN" Association="Self.FK_TAIKHOAN_NHANVIEN">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_THANHTOAN_KHACHHANG" Association="Self.FK_THANHTOAN_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="THANHTOAN" EntitySet="THANHTOAN" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

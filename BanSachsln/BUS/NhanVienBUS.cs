@@ -38,9 +38,9 @@ namespace BUS
                 return false;
             }
             // tuổi nhân viên >18
-            if (DateTime.Now.Year - obj.NgaySinh.Value.Year<18)
+            if (DateTime.Now.Year - obj.NgaySinh.Value.Year<Regulations.TuoiToiThieu)
             {
-                Message = "Tuổi nhỏ hơn 18";
+                Message = "Tuổi nhỏ hơn "+ Regulations.TuoiToiThieu;
                 return false;
             }
             // Kiểm tra chứng minh nhân dân
@@ -101,9 +101,9 @@ namespace BUS
                 return false;
             }
             // tuổi nhân viên >18
-            if (DateTime.Now.Year - obj.NgaySinh.Value.Year < 18)
+            if (DateTime.Now.Year - obj.NgaySinh.Value.Year < Regulations.TuoiToiThieu)
             {
-                Message = "Tuổi nhỏ hơn 18";
+                Message = "Tuổi nhỏ hơn "+ Regulations.TuoiToiThieu;
                 return false;
             }
             // Kiểm tra chứng minh nhân dân
@@ -116,7 +116,11 @@ namespace BUS
             try
             {
                 NHANVIEN nv = db.NHANVIENs.Find(obj.MaNV);
-                nv = obj;
+                nv.TenNV = obj.TenNV;
+                nv.NgaySinh = obj.NgaySinh;
+                nv.DiaChi = obj.DiaChi;
+                nv.SoDienThoaiNV = obj.SoDienThoaiNV;
+                nv.MaLoaiNV = obj.MaLoaiNV;
                 db.SaveChanges();
             }
             catch (Exception e)

@@ -46,27 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHangBUS.cs" />
+    <Compile Include="BaoCaoTonKhoBUS.cs" />
+    <Compile Include="ChiTietKhuyenMaiBUS.cs" />
+    <Compile Include="CongNoBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
+    <Compile Include="KhuyenMaiBUS.cs" />
+    <Compile Include="LogoutBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="NhapSachBUS.cs" />
     <Compile Include="NhaXuatBanBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuyDinhBUS.cs" />
     <Compile Include="SachBUS.cs" />
+    <Compile Include="Services\BanHangService.cs" />
+    <Compile Include="Services\ChiTietKhuyenMaiService.cs" />
+    <Compile Include="Services\IBanHangService.cs" />
+    <Compile Include="Services\IChiTietKhuyenMaiService.cs" />
     <Compile Include="Services\IKhachHangService.cs" />
+    <Compile Include="Services\IKhuyenMaiService.cs" />
     <Compile Include="Services\INhanVienService.cs" />
     <Compile Include="Services\INhapSachService.cs" />
     <Compile Include="Services\INhaXuatBanService.cs" />
     <Compile Include="Services\ISachService.cs" />
     <Compile Include="Services\ITaiKhoanService.cs" />
+    <Compile Include="Services\IThanhToanService.cs" />
     <Compile Include="Services\ITheLoaiService.cs" />
     <Compile Include="Services\KhachHangService.cs" />
+    <Compile Include="Services\KhuyenMaiService.cs" />
     <Compile Include="Services\NhanVienService.cs" />
     <Compile Include="Services\NhapSachService.cs" />
     <Compile Include="Services\NhaXuatBanService.cs" />
     <Compile Include="Services\SachService.cs" />
     <Compile Include="Services\TaiKhoanService.cs" />
+    <Compile Include="Services\ThanhToanService.cs" />
     <Compile Include="Services\TheLoaiService.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
+    <Compile Include="ThanhToanBUS.cs" />
     <Compile Include="TheLoaiBUS.cs" />
   </ItemGroup>
   <ItemGroup>
